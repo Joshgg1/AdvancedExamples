@@ -1,6 +1,7 @@
-import React from 'react';
-import { TextInput } from 'react-native';
-import defaultStyles from '../styles/defaultStyles';
+import React from "react";
+import { TextInput, KeyboardAvoidingView, StyleSheet } from "react-native";
+import defaultStyles from "../styles/defaultStyles";
+import colors from "../styles/colors";
 
 interface TextFieldProps {
   placeholder: string;
@@ -10,11 +11,21 @@ interface TextFieldProps {
 
 export default function TextField({ placeholder, value, onChangeText }: TextFieldProps) {
   return (
-    <TextInput
-      style={defaultStyles.input}
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChangeText}
-    />
+    <KeyboardAvoidingView style={styles.keyboardContainer}>
+      <TextInput
+        style={defaultStyles.input}
+        placeholder={placeholder}
+        placeholderTextColor={colors.secondary}
+        value={value}
+        onChangeText={onChangeText}
+      />
+    </KeyboardAvoidingView>
   );
 }
+
+const styles = StyleSheet.create({
+  keyboardContainer: {
+    width: "100%",
+    alignItems: "center",
+  },
+});

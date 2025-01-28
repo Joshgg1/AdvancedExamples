@@ -1,45 +1,52 @@
-import { StyleSheet } from 'react-native';
-import colors from './colors';
+import { StyleSheet } from "react-native";
+import colors from "./colors";
 
-export default StyleSheet.create({
+const defaultStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.steelBlue,
-    padding: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.background,
+    padding: 16,
   },
   title: {
     fontSize: 24,
-    color: colors.pureWhite,
+    fontWeight: "bold",
+    color: colors.primary,
     marginBottom: 20,
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: colors.turquoise,
-    padding: 12,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  buttonText: {
-    color: colors.lapisLazuli,
-    fontWeight: 'bold',
   },
   input: {
-    backgroundColor: colors.pureWhite,
-    borderColor: colors.lightGreen,
+    width: "80%",
     borderWidth: 2,
-    borderRadius: 8,
+    borderColor: colors.secondary,
+    borderRadius: 12,
     padding: 12,
-    marginVertical: 10,
+    backgroundColor: "#FFFFFF",
+    fontSize: 16,
+    color: colors.primary,
+  },
+  button: {
+    padding: 16,
+    backgroundColor: colors.secondary,
+    borderRadius: 8,
+    alignItems: "center",
+    marginTop: 10,
+  },
+  buttonText: {
+    fontSize: 16,
+    color: "#FFFFFF",
+    fontWeight: "bold",
   },
   colorBox: {
+    width: 100,
     height: 100,
-    borderRadius: 12,
-    marginVertical: 20,
+    marginTop: 20,
   },
   result: {
-    color: colors.pureWhite,
     fontSize: 18,
-    textAlign: 'center',
+    marginTop: 10,
+    color: colors.primary,
   },
 });
+
+export default defaultStyles;
